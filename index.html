@@ -7,6 +7,7 @@
     <title>Shreelakshmi T P | Portfolio</title>
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
@@ -21,18 +22,19 @@
             line-height: 1.6;
         }
 
-        /* Navigation */
+        /* NAVBAR */
+
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            background: white;
-            padding: 18px 8%;
+            background: rgba(255,255,255,0.95);
+            padding: 15px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
             z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
         }
 
         nav h2 {
@@ -47,49 +49,82 @@
 
         nav ul li a {
             text-decoration: none;
-            color: #333;
-            font-weight: 500;
+            color: #222;
+            font-weight: bold;
+            transition: 0.3s;
         }
 
         nav ul li a:hover {
             color: #4f46e5;
         }
 
-        /* Common Section */
-        section {
-            padding: 100px 8%;
-        }
+       
 
-        section h2 {
-            text-align: center;
-            font-size: 40px;
-            color: #4f46e5;
-            margin-bottom: 50px;
-        }
-
-        /* Home */
-        #home {
+        .home {
             min-height: 100vh;
             display: flex;
-            align-items: center;
             justify-content: center;
-            text-align: center;
-            padding-top: 120px;
+            align-items: center;
+            gap: 80px;
+            padding: 100px 8% 50px;
+
+            background: linear-gradient(
+                -45deg,
+                #eef2ff,
+                #f5f3ff,
+                #e0f2fe,
+                #f0fdf4
+            );
+
+            background-size: 400% 400%;
+            animation: gradientMove 10s ease infinite;
         }
 
-        .home-content h1 {
+        @keyframes gradientMove {
+
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+
+        }
+
+        .home-text {
+            max-width: 600px;
+        }
+
+        .home-text h1 {
             font-size: 50px;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
-        .home-content h1 span {
+        .home-text h1 span {
             color: #4f46e5;
         }
 
-        .home-content p {
-            font-size: 20px;
+        .home-text h3 {
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+
+       
+
+        #typing {
+            color: #4f46e5;
+            border-right: 3px solid #4f46e5;
+            padding-right: 5px;
+        }
+
+        .home-text p {
+            font-size: 18px;
             margin-bottom: 25px;
-            color: #555;
         }
 
         .btn {
@@ -99,29 +134,148 @@
             color: white;
             text-decoration: none;
             border-radius: 8px;
-            margin: 5px;
+            transition: 0.3s;
         }
 
         .btn:hover {
-            background: #3730a3;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(79,70,229,0.3);
         }
 
-        /* About */
-        #about {
-            background: white;
+       
+
+        .profile-container {
+            width: 260px;
+            height: 260px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        .about-content {
-            max-width: 850px;
+        .profile {
+            width: 230px;
+            height: 230px;
+            border-radius: 50%;
+            object-fit: cover;
+
+            border: 6px solid white;
+
+            box-shadow:
+                0 0 20px rgba(79,70,229,0.4),
+                0 0 40px rgba(79,70,229,0.2);
+
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+
+        }
+
+       
+        section {
+            padding: 90px 8%;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 35px;
+            color: #4f46e5;
+            margin-bottom: 40px;
+        }
+
+       
+
+        .about {
+            max-width: 900px;
             margin: auto;
             text-align: center;
             font-size: 18px;
-            color: #555;
         }
 
-        /* Education */
-        .education-container {
-            max-width: 900px;
+        
+
+        .skills-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .skill {
+            background: white;
+            padding: 18px 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(79,70,229,0.2);
+        }
+
+        /* PROJECTS */
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .project {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+
+            transition: all 0.4s ease;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 4px;
+            background: #4f46e5;
+            transition: 0.4s;
+        }
+
+        .project:hover::before {
+            left: 0;
+        }
+
+        .project:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .project h3 {
+            color: #4f46e5;
+            margin-bottom: 10px;
+        }
+
+        /* EDUCATION */
+
+        .education {
+            max-width: 800px;
             margin: auto;
         }
 
@@ -130,221 +284,191 @@
             padding: 25px;
             margin-bottom: 20px;
             border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-        }
-
-        .education-card h3 {
-            color: #4f46e5;
-            margin-bottom: 8px;
-        }
-
-        /* Skills */
-        #skills {
-            background: #f5f7fb;
-        }
-
-        .skills-container {
-            max-width: 1200px;
-            margin: auto;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-        }
-
-        .skill {
-            background: white;
-            padding: 28px 45px;
-            border-radius: 15px;
-            font-size: 23px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-            transition: 0.3s;
-        }
-
-        .skill:hover {
-            transform: translateY(-5px);
-        }
-
-        /* Projects */
-        #projects {
-            background: white;
-        }
-
-        .projects-container {
-            max-width: 1000px;
-            margin: auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        .project-card {
-            background: #f5f7fb;
-            padding: 25px;
-            border-radius: 15px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.08);
             transition: 0.3s;
         }
 
-        .project-card:hover {
-            transform: translateY(-5px);
+        .education-card:hover {
+            transform: translateX(10px);
         }
 
-        .project-card h3 {
-            color: #4f46e5;
-            margin-bottom: 12px;
-        }
+        
 
-        .project-card p {
-            color: #555;
-        }
-
-        /* Certifications */
-        .certifications-container {
-            max-width: 900px;
-            margin: auto;
-        }
-
-        .certificate {
-            background: white;
-            padding: 22px;
-            margin-bottom: 18px;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-        }
-
-        .certificate h3 {
-            color: #4f46e5;
-            margin-bottom: 5px;
-        }
-
-        /* Contact */
-        #contact {
-            background: white;
+        .contact {
             text-align: center;
         }
 
-        .contact-info {
+        .contact p {
+            margin: 10px;
             font-size: 18px;
-            color: #555;
         }
 
-        .contact-info p {
-            margin: 12px 0;
+        .contact a {
+            color: #4f46e5;
+            text-decoration: none;
         }
 
-        /* Footer */
+        
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+       
         footer {
+            text-align: center;
+            padding: 25px;
             background: #111827;
             color: white;
-            text-align: center;
-            padding: 25px;
         }
 
-        /* Mobile */
+        /* MOBILE */
+
         @media (max-width: 768px) {
+
             nav {
-                flex-direction: column;
-                gap: 10px;
+                padding: 15px 5%;
             }
 
             nav ul {
-                gap: 12px;
-                flex-wrap: wrap;
-                justify-content: center;
+                gap: 10px;
+                font-size: 13px;
             }
 
-            .home-content h1 {
+            .home {
+                flex-direction: column-reverse;
+                text-align: center;
+                gap: 30px;
+            }
+
+            .home-text h1 {
                 font-size: 38px;
             }
 
-            section h2 {
-                font-size: 32px;
+            .profile {
+                width: 190px;
+                height: 190px;
             }
 
-            .skill {
-                padding: 22px 30px;
-                font-size: 20px;
+            .profile-container {
+                width: 210px;
+                height: 210px;
             }
+
         }
+
     </style>
 </head>
 
 <body>
 
-    <!-- Navigation -->
+   
+
     <nav>
-        <h2>My Portfolio</h2>
+
+        <h2>Shreelakshmi</h2>
 
         <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#certifications">Certifications</a></li>
-            <li><a href="#contact">Contact</a></li>
+
+            <li>
+                <a href="#home">Home</a>
+            </li>
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+
+            <li>
+                <a href="#education">Education</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
         </ul>
+
     </nav>
 
 
-    <!-- Home -->
-    <section id="home">
-        <div class="home-content">
-            <h1>Hello, I'm <span>Shreelakshmi T P</span></h1>
+   
+
+    <section class="home" id="home">
+
+        <div class="home-text">
+
+            <h1>
+                Hi, I'm <span>Shreelakshmi</span>
+            </h1>
+
+            <h3>
+                I am a <span id="typing"></span>
+            </h3>
 
             <p>
-                Computer Science Engineering Student
+                Computer Science Engineering student passionate about
+                Artificial Intelligence, Machine Learning and Web Development.
             </p>
 
-            <a href="#projects" class="btn">View Projects</a>
-            <a href="#contact" class="btn">Contact Me</a>
+            <a href="#projects" class="btn">
+                View My Projects
+            </a>
+
         </div>
+
+
+        <div class="profile-container">
+
+            <img
+                src="profile.jpg"
+                alt="Shreelakshmi Profile Photo"
+                class="profile"
+            >
+
+        </div>
+
     </section>
 
 
-    <!-- About -->
-    <section id="about">
+   
+
+    <section id="about" class="reveal">
+
         <h2>About Me</h2>
 
-        <div class="about-content">
+        <div class="about">
+
             <p>
-                I am a Computer Science Engineering student with an interest
-                in software development and web technologies. I enjoy learning
-                programming, developing projects, and improving my technical skills.
+                I am a Computer Science Engineering student with a strong
+                interest in Artificial Intelligence, Machine Learning and
+                Web Development. I enjoy learning new technologies and
+                building practical projects.
             </p>
+
         </div>
+
     </section>
 
 
-    <!-- Education -->
-    <section id="education">
-        <h2>Education</h2>
+    <!-- SKILLS -->
 
-        <div class="education-container">
+    <section id="skills" class="reveal">
 
-            <div class="education-card">
-                <h3>B.E Computer Science and Engineering</h3>
-                <p>Adichunchanagiri Institute of Technology</p>
-                <p>Chikkamagaluru</p>
-            </div>
-
-            <div class="education-card">
-                <h3>Diploma in Computer Science</h3>
-                <p>Government Polytechnic, K.R. Pete</p>
-            </div>
-
-            <div class="education-card">
-                <h3>SSLC</h3>
-                <p>Shalini Vidya Shale</p>
-            </div>
-
-        </div>
-    </section>
-
-
-    <!-- Skills -->
-    <section id="skills">
         <h2>My Skills</h2>
 
         <div class="skills-container">
@@ -363,77 +487,273 @@
 
             <div class="skill">MongoDB</div>
 
+            <div class="skill">Machine Learning</div>
+
+            <div class="skill">Artificial Intelligence</div>
+
+            <div class="skill">Git & GitHub</div>
+
         </div>
+
     </section>
 
 
-    <!-- Projects -->
-    <section id="projects">
+   
+
+    <section id="projects" class="reveal">
+
         <h2>My Projects</h2>
 
         <div class="projects-container">
 
-            <div class="project-card">
+           
+
+            <div class="project">
+
                 <h3>
                     Automatic Segmentation of Spinal Cord Diffusion MR Images
+                    for Disease Location Finding
                 </h3>
 
                 <p>
-                    A project focused on automatic segmentation of spinal cord
-                    diffusion MR images for disease location finding.
+                    An image processing and machine learning based project
+                    for automatic segmentation of spinal cord diffusion MR
+                    images to identify disease locations.
                 </p>
+
+            </div>
+
+
+            <!-- SECOND PROJECT -->
+
+            <div class="project">
+
+                <h3>
+                    Catering Management System
+                </h3>
+
+                <p>
+                    A web-based catering management system using database
+                    technologies and modern web development.
+                </p>
+
             </div>
 
         </div>
+
     </section>
 
 
-    <!-- Certifications -->
-    <section id="certifications">
-        <h2>Certifications</h2>
+  
 
-        <div class="certifications-container">
+    <section id="education" class="reveal">
 
-            <div class="certificate">
-                <h3>Design and Development of Intelligent Agent Systems</h3>
-                <p>Kaushalya Technical Training and Consultancy</p>
+        <h2>Education</h2>
+
+        <div class="education">
+
+            <div class="education-card">
+
+                <h3>B.E Computer Science and Engineering</h3>
+
+                <p>
+                    Adichunchanagiri Institute of Technology
+                </p>
+
+                <p>
+                    CGPA: 8.09
+                </p>
+
             </div>
 
-            <div class="certificate">
-                <h3>Measuring the Business Impact of AI/ML Initiatives</h3>
-                <p>Infosys Springboard</p>
+
+            <div class="education-card">
+
+                <h3>Diploma in Computer Science</h3>
+
+                <p>
+                    Government Polytechnic, KR Pete
+                </p>
+
+                <p>
+                    CGPA: 8.09
+                </p>
+
             </div>
 
-            <div class="certificate">
-                <h3>Full Stack Development Using Django Framework</h3>
-                <p>Online Course</p>
-            </div>
 
-            <div class="certificate">
-                <h3>MongoDB Certification</h3>
-                <p>MongoDB</p>
+            <div class="education-card">
+
+                <h3>SSLC</h3>
+
+                <p>
+                    Shalini Vidya Shale
+                </p>
+
+                <p>
+                    Percentage: 83.2%
+                </p>
+
             </div>
 
         </div>
+
     </section>
 
 
-    <!-- Contact -->
-    <section id="contact">
+    <!-- CONTACT -->
+
+    <section id="contact" class="contact reveal">
+
         <h2>Contact Me</h2>
 
-        <div class="contact-info">
-            <p>Email: your-email@example.com</p>
-            <p>Phone: +91 XXXXX XXXXX</p>
-            <p>Location: Karnataka, India</p>
-        </div>
+        <p>
+            Email:
+            <a href="mailto:shreelakshmitp612005@gmail.com">
+                shreelakshmitp612005@gmail.com
+            </a>
+        </p>
+
+        <p>
+            Phone: 8904197085
+        </p>
+
+        <p>
+            LinkedIn:
+            <a
+                href="https://www.linkedin.com/in/shree-lakshmi-9670a33a9/"
+                target="_blank"
+            >
+                LinkedIn Profile
+            </a>
+        </p>
+
     </section>
 
 
-    <!-- Footer -->
+   
+
     <footer>
-        <p>© 2026 Shreelakshmi T P. All Rights Reserved.</p>
+
+        <p>
+            © 2026 Shreelakshmi T P. All Rights Reserved.
+        </p>
+
     </footer>
+
+
+    
+
+    <script>
+
+        
+
+        const words = [
+            "Computer Science Engineer",
+            "Java Developer",
+            "AI/ML Enthusiast",
+            "Web Developer"
+        ];
+
+        let wordIndex = 0;
+        let charIndex = 0;
+        let deleting = false;
+
+        const typing = document.getElementById("typing");
+
+
+        function typeEffect() {
+
+            const currentWord = words[wordIndex];
+
+            if (!deleting) {
+
+                typing.textContent =
+                    currentWord.substring(0, charIndex + 1);
+
+                charIndex++;
+
+                if (charIndex === currentWord.length) {
+
+                    deleting = true;
+
+                    setTimeout(typeEffect, 1500);
+
+                    return;
+                }
+
+            } else {
+
+                typing.textContent =
+                    currentWord.substring(0, charIndex - 1);
+
+                charIndex--;
+
+                if (charIndex === 0) {
+
+                    deleting = false;
+
+                    wordIndex++;
+
+                    if (wordIndex === words.length) {
+                        wordIndex = 0;
+                    }
+
+                }
+
+            }
+
+            setTimeout(
+                typeEffect,
+                deleting ? 60 : 100
+            );
+
+        }
+
+
+        typeEffect();
+
+
+       
+
+        function revealOnScroll() {
+
+            const reveals =
+                document.querySelectorAll(".reveal");
+
+            reveals.forEach(function(element) {
+
+                const windowHeight =
+                    window.innerHeight;
+
+                const elementTop =
+                    element.getBoundingClientRect().top;
+
+                const visiblePoint = 120;
+
+                if (
+                    elementTop <
+                    windowHeight - visiblePoint
+                ) {
+
+                    element.classList.add("active");
+
+                }
+
+            });
+
+        }
+
+
+        window.addEventListener(
+            "scroll",
+            revealOnScroll
+        );
+
+
+        revealOnScroll();
+
+    </script>
 
 </body>
 </html>
