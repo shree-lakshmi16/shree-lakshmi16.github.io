@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -438,8 +439,6 @@
 
         <div class="profile-container">
 
-            <!-- CHANGE THIS TO YOUR PHOTO FILE NAME -->
-
             <img
                 src="profile.jpg"
                 alt="Shreelakshmi Profile Photo"
@@ -512,30 +511,7 @@
 
         <div class="projects-container">
 
-
-            <div class="project">
-
-                <h3>AI Phishing Website Detection</h3>
-
-                <p>
-                    An AI and Machine Learning based system for detecting
-                    phishing websites.
-                </p>
-
-            </div>
-
-
-            <div class="project">
-
-                <h3>RAG Chatbot</h3>
-
-                <p>
-                    A chatbot using Retrieval Augmented Generation to answer
-                    questions from PDF documents.
-                </p>
-
-            </div>
-
+            <!-- PROJECT 1 -->
 
             <div class="project">
 
@@ -548,6 +524,23 @@
 
             </div>
 
+
+            <!-- PROJECT 2 -->
+
+            <div class="project">
+
+                <h3>
+                    Automatic Segmentation of Spinal Cord Diffusion MR Images
+                    for Disease Location Finding
+                </h3>
+
+                <p>
+                    An image processing and machine learning based project
+                    for automatic segmentation of spinal cord diffusion MR
+                    images to identify disease locations.
+                </p>
+
+            </div>
 
         </div>
 
@@ -715,7 +708,10 @@
 
             }
 
-            setTimeout(typeEffect, deleting ? 60 : 100);
+            setTimeout(
+                typeEffect,
+                deleting ? 60 : 100
+            );
 
         }
 
@@ -740,8 +736,10 @@
 
                 const visiblePoint = 120;
 
-                if (elementTop <
-                    windowHeight - visiblePoint) {
+                if (
+                    elementTop <
+                    windowHeight - visiblePoint
+                ) {
 
                     element.classList.add("active");
 
@@ -765,3 +763,4 @@
 
 </body>
 </html>
+```
