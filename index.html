@@ -7,6 +7,7 @@
     <title>Shreelakshmi T P | Portfolio</title>
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
@@ -16,167 +17,218 @@
 
         body {
             font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background: #f7f8fc;
+            background: #f5f7fb;
             color: #222;
+            line-height: 1.6;
         }
 
-        /* Navigation */
+        /* NAVBAR */
 
         nav {
-            position: sticky;
+            position: fixed;
             top: 0;
-            z-index: 1000;
-            background: white;
+            width: 100%;
+            background: rgba(255,255,255,0.95);
+            padding: 15px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 18px 8%;
+            z-index: 1000;
             box-shadow: 0 2px 10px rgba(0,0,0,0.08);
         }
 
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
+        nav h2 {
+            color: #4f46e5;
         }
 
         nav ul {
-            display: flex;
             list-style: none;
+            display: flex;
             gap: 25px;
         }
 
         nav ul li a {
             text-decoration: none;
             color: #222;
-            font-weight: 500;
+            font-weight: bold;
+            transition: 0.3s;
         }
 
         nav ul li a:hover {
-            color: #6c63ff;
+            color: #4f46e5;
         }
 
-        /* Hero */
+        /* HOME */
 
-        .hero {
-            min-height: 90vh;
+        .home {
+            min-height: 100vh;
             display: flex;
+            justify-content: center;
             align-items: center;
-            justify-content: space-between;
-            padding: 70px 8%;
-            background: linear-gradient(135deg, #f7f8fc, #eef0ff);
+            gap: 80px;
+            padding: 100px 8% 50px;
+
+            background: linear-gradient(
+                -45deg,
+                #eef2ff,
+                #f5f3ff,
+                #e0f2fe,
+                #f0fdf4
+            );
+
+            background-size: 400% 400%;
+            animation: gradientMove 10s ease infinite;
         }
 
-        .hero-text {
-            max-width: 650px;
+        @keyframes gradientMove {
+
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+
         }
 
-        .hero-text h1 {
-            font-size: 52px;
+        .home-text {
+            max-width: 600px;
+        }
+
+        .home-text h1 {
+            font-size: 50px;
             margin-bottom: 10px;
         }
 
-        .hero-text h1 span {
-            color: #6c63ff;
+        .home-text h1 span {
+            color: #4f46e5;
         }
 
-        .hero-text h2 {
-            font-size: 28px;
+        .home-text h3 {
+            font-size: 25px;
             margin-bottom: 20px;
-            color: #555;
         }
 
-        .hero-text p {
+        /* TYPING */
+
+        #typing {
+            color: #4f46e5;
+            border-right: 3px solid #4f46e5;
+            padding-right: 5px;
+        }
+
+        .home-text p {
             font-size: 18px;
-            margin-bottom: 30px;
-            color: #555;
+            margin-bottom: 25px;
         }
 
-        .buttons a {
+        .btn {
             display: inline-block;
-            padding: 12px 22px;
-            margin-right: 10px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .btn-primary {
-            background: #6c63ff;
+            padding: 12px 25px;
+            background: #4f46e5;
             color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: 0.3s;
         }
 
-        .btn-secondary {
-            border: 2px solid #6c63ff;
-            color: #6c63ff;
+        .btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(79,70,229,0.3);
         }
 
-        /* General Section */
+        /* PROFILE PHOTO */
+
+        .profile-container {
+            width: 260px;
+            height: 260px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile {
+            width: 230px;
+            height: 230px;
+            border-radius: 50%;
+            object-fit: cover;
+
+            border: 6px solid white;
+
+            box-shadow:
+                0 0 20px rgba(79,70,229,0.4),
+                0 0 40px rgba(79,70,229,0.2);
+
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+
+        }
+
+        /* SECTIONS */
 
         section {
-            padding: 80px 8%;
+            padding: 90px 8%;
         }
 
-        .section-title {
+        section h2 {
             text-align: center;
-            font-size: 34px;
-            margin-bottom: 45px;
+            font-size: 35px;
+            color: #4f46e5;
+            margin-bottom: 40px;
         }
 
-        .section-title span {
-            color: #6c63ff;
-        }
-
-        /* About */
+        /* ABOUT */
 
         .about {
             max-width: 900px;
             margin: auto;
             text-align: center;
             font-size: 18px;
-            color: #555;
         }
 
-        /* Education */
-
-        .education-container {
-            max-width: 900px;
-            margin: auto;
-        }
-
-        .education-card {
-            background: white;
-            padding: 25px;
-            margin-bottom: 20px;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-        }
-
-        .education-card h3 {
-            color: #6c63ff;
-            margin-bottom: 8px;
-        }
-
-        /* Skills */
+        /* SKILLS */
 
         .skills-container {
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
-            gap: 15px;
-            max-width: 900px;
-            margin: auto;
+            flex-wrap: wrap;
+            gap: 20px;
         }
 
         .skill {
             background: white;
-            padding: 15px 25px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            font-weight: bold;
+            padding: 18px 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+
+            transition: 0.3s;
         }
 
-        /* Projects */
+        .skill:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(79,70,229,0.2);
+        }
+
+        /* PROJECTS */
 
         .projects-container {
             display: grid;
@@ -184,398 +236,532 @@
             gap: 25px;
         }
 
-        .project-card {
+        .project {
             background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transition: 0.3s;
+            padding: 25px;
+            border-radius: 15px;
+
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+
+            transition: all 0.4s ease;
+
+            position: relative;
+            overflow: hidden;
         }
 
-        .project-card:hover {
-            transform: translateY(-5px);
+        .project::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 4px;
+            background: #4f46e5;
+            transition: 0.4s;
         }
 
-        .project-card h3 {
-            color: #6c63ff;
-            margin-bottom: 12px;
+        .project:hover::before {
+            left: 0;
         }
 
-        .project-card p {
-            color: #555;
+        .project:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
         }
 
-        /* Certifications */
+        .project h3 {
+            color: #4f46e5;
+            margin-bottom: 10px;
+        }
 
-        .certifications {
-            max-width: 900px;
+        /* EDUCATION */
+
+        .education {
+            max-width: 800px;
             margin: auto;
         }
 
-        .certificate {
+        .education-card {
             background: white;
-            padding: 20px;
-            margin-bottom: 15px;
-            border-left: 5px solid #6c63ff;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+
+            transition: 0.3s;
         }
 
-        /* Contact */
+        .education-card:hover {
+            transform: translateX(10px);
+        }
+
+        /* CONTACT */
 
         .contact {
             text-align: center;
         }
 
         .contact p {
-            margin: 12px 0;
-            font-size: 17px;
+            margin: 10px;
+            font-size: 18px;
         }
 
         .contact a {
-            color: #6c63ff;
+            color: #4f46e5;
             text-decoration: none;
         }
 
-        /* Footer */
+        /* SCROLL ANIMATION */
 
-        footer {
-            background: #222;
-            color: white;
-            text-align: center;
-            padding: 25px;
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
         }
 
-        /* Mobile */
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #111827;
+            color: white;
+        }
+
+        /* MOBILE */
 
         @media (max-width: 768px) {
 
             nav {
-                flex-direction: column;
-                gap: 15px;
+                padding: 15px 5%;
             }
 
             nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 15px;
+                gap: 10px;
+                font-size: 13px;
             }
 
-            .hero {
+            .home {
+                flex-direction: column-reverse;
                 text-align: center;
-                justify-content: center;
+                gap: 30px;
             }
 
-            .hero-text h1 {
+            .home-text h1 {
                 font-size: 38px;
             }
 
-            .hero-text h2 {
-                font-size: 22px;
+            .profile {
+                width: 190px;
+                height: 190px;
             }
 
-            section {
-                padding: 60px 5%;
+            .profile-container {
+                width: 210px;
+                height: 210px;
             }
+
         }
+
     </style>
 </head>
 
 <body>
 
-<!-- Navigation -->
+    <!-- NAVIGATION -->
 
-<nav>
+    <nav>
 
-    <div class="logo">
-        Shreelakshmi T P
-    </div>
+        <h2>Shreelakshmi</h2>
 
-    <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#certifications">Certifications</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
+        <ul>
 
-</nav>
+            <li>
+                <a href="#home">Home</a>
+            </li>
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+
+            <li>
+                <a href="#education">Education</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
+        </ul>
+
+    </nav>
 
 
-<!-- Home -->
+    <!-- HOME -->
 
-<section class="hero" id="home">
+    <section class="home" id="home">
 
-    <div class="hero-text">
+        <div class="home-text">
 
-        <h1>
-            Hi, I'm <span>Shreelakshmi T P</span>
-        </h1>
+            <h1>
+                Hi, I'm <span>Shreelakshmi</span>
+            </h1>
 
-        <h2>
-            Computer Science Engineering Student
-        </h2>
+            <h3>
+                I am a <span id="typing"></span>
+            </h3>
 
-        <p>
-            I am passionate about Java, Web Development,
-            Artificial Intelligence and Machine Learning.
-            I enjoy learning new technologies and building
-            practical software solutions.
-        </p>
+            <p>
+                Computer Science Engineering student passionate about
+                Artificial Intelligence, Machine Learning and Web Development.
+            </p>
 
-        <div class="buttons">
-
-            <a href="#contact" class="btn-primary">
-                Contact Me
-            </a>
-
-            <a href="resume.pdf" class="btn-secondary" target="_blank">
-                View Resume
+            <a href="#projects" class="btn">
+                View My Projects
             </a>
 
         </div>
 
-    </div>
 
-</section>
+        <div class="profile-container">
 
+            <!-- CHANGE THIS TO YOUR PHOTO FILE NAME -->
 
-<!-- About -->
+            <img
+                src="profile.jpg"
+                alt="Shreelakshmi Profile Photo"
+                class="profile"
+            >
 
-<section id="about">
+        </div>
 
-    <h2 class="section-title">
-        About <span>Me</span>
-    </h2>
-
-    <div class="about">
-
-        <p>
-            I am a Computer Science Engineering student at
-            Adichunchanagiri Institute of Technology.
-            I have a strong interest in software development,
-            Java, databases, web technologies and Artificial
-            Intelligence.
-        </p>
-
-        <br>
-
-        <p>
-            I am continuously improving my programming skills
-            and looking for opportunities where I can learn,
-            contribute and grow as a software professional.
-        </p>
-
-    </div>
-
-</section>
+    </section>
 
 
-<!-- Education -->
+    <!-- ABOUT -->
 
-<section id="education">
+    <section id="about" class="reveal">
 
-    <h2 class="section-title">
-        My <span>Education</span>
-    </h2>
+        <h2>About Me</h2>
 
-    <div class="education-container">
-
-        <div class="education-card">
-
-            <h3>
-                Bachelor of Engineering - Computer Science
-            </h3>
+        <div class="about">
 
             <p>
-                <strong>
+                I am a Computer Science Engineering student with a strong
+                interest in Artificial Intelligence, Machine Learning and
+                Web Development. I enjoy learning new technologies and
+                building practical projects.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+
+    <section id="skills" class="reveal">
+
+        <h2>My Skills</h2>
+
+        <div class="skills-container">
+
+            <div class="skill">Java</div>
+
+            <div class="skill">Python</div>
+
+            <div class="skill">HTML</div>
+
+            <div class="skill">CSS</div>
+
+            <div class="skill">JavaScript</div>
+
+            <div class="skill">MySQL</div>
+
+            <div class="skill">MongoDB</div>
+
+            <div class="skill">Machine Learning</div>
+
+            <div class="skill">Artificial Intelligence</div>
+
+            <div class="skill">Git & GitHub</div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+
+    <section id="projects" class="reveal">
+
+        <h2>My Projects</h2>
+
+        <div class="projects-container">
+
+
+            <div class="project">
+
+                <h3>AI Phishing Website Detection</h3>
+
+                <p>
+                    An AI and Machine Learning based system for detecting
+                    phishing websites.
+                </p>
+
+            </div>
+
+
+            <div class="project">
+
+                <h3>RAG Chatbot</h3>
+
+                <p>
+                    A chatbot using Retrieval Augmented Generation to answer
+                    questions from PDF documents.
+                </p>
+
+            </div>
+
+
+            <div class="project">
+
+                <h3>Catering Management System</h3>
+
+                <p>
+                    A web-based catering management system using database
+                    technologies and modern web development.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- EDUCATION -->
+
+    <section id="education" class="reveal">
+
+        <h2>Education</h2>
+
+        <div class="education">
+
+
+            <div class="education-card">
+
+                <h3>B.E Computer Science and Engineering</h3>
+
+                <p>
                     Adichunchanagiri Institute of Technology
-                </strong>
-            </p>
+                </p>
 
-            <p>
-                CGPA: <strong>8.09</strong>
-            </p>
+                <p>
+                    CGPA: 8.09
+                </p>
+
+            </div>
+
+
+            <div class="education-card">
+
+                <h3>Diploma in Computer Science</h3>
+
+                <p>
+                    Government Polytechnic, KR Pete
+                </p>
+
+                <p>
+                    CGPA: 8.09
+                </p>
+
+            </div>
+
+
+            <div class="education-card">
+
+                <h3>SSLC</h3>
+
+                <p>
+                    Shalini Vidya Shale
+                </p>
+
+                <p>
+                    Percentage: 83.2%
+                </p>
+
+            </div>
+
 
         </div>
 
-
-        <div class="education-card">
-
-            <h3>
-                Diploma - Computer Science
-            </h3>
-
-            <p>
-                <strong>
-                    Government Polytechnic College, K.R. Pete
-                </strong>
-            </p>
-
-            <p>
-                CGPA: <strong>9.00</strong>
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
+    </section>
 
 
-<!-- Skills -->
+    <!-- CONTACT -->
 
-<section id="skills">
+    <section id="contact" class="contact reveal">
 
-    <h2 class="section-title">
-        My <span>Skills</span>
-    </h2>
-
-    <div class="skills-container">
-
-        <div class="skill">Java</div>
-
-        <div class="skill">HTML</div>
-
-        <div class="skill">CSS</div>
-
-        <div class="skill">SQL</div>
-
-        <div class="skill">MongoDB</div>
-
-        <div class="skill">GitHub</div>
-
-    </div>
-
-</section>
-
-
-<!-- Projects -->
-
-<section id="projects">
-
-    <h2 class="section-title">
-        My <span>Projects</span>
-    </h2>
-
-    <div class="projects-container">
-
-        <div class="project-card">
-
-            <h3>
-                Catering Management System
-            </h3>
-
-            <p>
-                A web-based Catering Management System
-                developed to manage catering-related
-                activities and information efficiently.
-            </p>
-
-        </div>
-
-
-        <div class="project-card">
-
-            <h3>
-                Automatic Segmentation of Spinal Cord Diffusion MR Images
-            </h3>
-
-            <p>
-                A project focused on automatic segmentation
-                of spinal cord diffusion MR images for
-                identifying disease locations.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- Certifications -->
-
-<section id="certifications">
-
-    <h2 class="section-title">
-        My <span>Certifications</span>
-    </h2>
-
-    <div class="certifications">
-
-        <div class="certificate">
-            Design and Development of Intelligent Agent Systems
-        </div>
-
-        <div class="certificate">
-            Full Stack Development Using Django Framework
-        </div>
-
-        <div class="certificate">
-            Introduction to Cyber Security - Course Completion
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- Contact -->
-
-<section id="contact">
-
-    <h2 class="section-title">
-        Contact <span>Me</span>
-    </h2>
-
-    <div class="contact">
+        <h2>Contact Me</h2>
 
         <p>
-            <strong>Email:</strong>
+            Email:
             <a href="mailto:shreelakshmitp612005@gmail.com">
                 shreelakshmitp612005@gmail.com
             </a>
         </p>
 
         <p>
-            <strong>Phone:</strong>
-            <a href="tel:8904197085">
-                8904197085
-            </a>
+            Phone: 8904197085
         </p>
 
         <p>
-            <strong>LinkedIn:</strong>
-            <a href="https://www.linkedin.com/in/shree-lakshmi-9670a33a9/"
-               target="_blank">
-                View LinkedIn Profile
+            LinkedIn:
+            <a
+                href="https://www.linkedin.com/in/shree-lakshmi-9670a33a9/"
+                target="_blank"
+            >
+                LinkedIn Profile
             </a>
         </p>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
 
         <p>
-            <strong>GitHub:</strong>
-            <a href="https://github.com/shree-lakshmi16"
-               target="_blank">
-                View GitHub Profile
-            </a>
+            © 2026 Shreelakshmi T P. All Rights Reserved.
         </p>
 
-    </div>
-
-</section>
+    </footer>
 
 
-<!-- Footer -->
+    <!-- JAVASCRIPT -->
 
-<footer>
+    <script>
 
-    <p>
-        © 2026 Shreelakshmi T P. All Rights Reserved.
-    </p>
+        /* TYPING ANIMATION */
 
-</footer>
+        const words = [
+            "Computer Science Engineer",
+            "Java Developer",
+            "AI/ML Enthusiast",
+            "Web Developer"
+        ];
+
+        let wordIndex = 0;
+        let charIndex = 0;
+        let deleting = false;
+
+        const typing = document.getElementById("typing");
+
+
+        function typeEffect() {
+
+            const currentWord = words[wordIndex];
+
+            if (!deleting) {
+
+                typing.textContent =
+                    currentWord.substring(0, charIndex + 1);
+
+                charIndex++;
+
+                if (charIndex === currentWord.length) {
+
+                    deleting = true;
+
+                    setTimeout(typeEffect, 1500);
+
+                    return;
+                }
+
+            } else {
+
+                typing.textContent =
+                    currentWord.substring(0, charIndex - 1);
+
+                charIndex--;
+
+                if (charIndex === 0) {
+
+                    deleting = false;
+
+                    wordIndex++;
+
+                    if (wordIndex === words.length) {
+                        wordIndex = 0;
+                    }
+
+                }
+
+            }
+
+            setTimeout(typeEffect, deleting ? 60 : 100);
+
+        }
+
+
+        typeEffect();
+
+
+        /* SCROLL REVEAL */
+
+        function revealOnScroll() {
+
+            const reveals =
+                document.querySelectorAll(".reveal");
+
+            reveals.forEach(function(element) {
+
+                const windowHeight =
+                    window.innerHeight;
+
+                const elementTop =
+                    element.getBoundingClientRect().top;
+
+                const visiblePoint = 120;
+
+                if (elementTop <
+                    windowHeight - visiblePoint) {
+
+                    element.classList.add("active");
+
+                }
+
+            });
+
+        }
+
+
+        window.addEventListener(
+            "scroll",
+            revealOnScroll
+        );
+
+
+        revealOnScroll();
+
+    </script>
+
 
 </body>
 </html>
